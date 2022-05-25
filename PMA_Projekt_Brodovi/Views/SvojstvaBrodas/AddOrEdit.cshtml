@@ -1,0 +1,45 @@
+﻿@model PMA_Projekt_Brodovi.Models.SvojstvaBroda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Svojstva Broda</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddOrEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SvojstvaBrodaId" />
+            <div class="form-group">
+                <label asp-for="MarkaBroda" class="control-label"></label>
+                <input asp-for="MarkaBroda" class="form-control" />
+                <span asp-validation-for="MarkaBroda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModelBroda" class="control-label"></label>
+                <input asp-for="ModelBroda" class="form-control" />
+                <span asp-validation-for="ModelBroda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boja" class="control-label"></label>
+                <input asp-for="Boja" class="form-control" />
+                <span asp-validation-for="Boja" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Potvrdi" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Natrag</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
